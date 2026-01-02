@@ -1,12 +1,3 @@
-## SOC Case Study – DNS Beaconing Detection
-
-This repository contains a real-world styled SOC case study based on PCAP analysis.
-
-### Contents
-- Incident report identifying suspicious DNS and HTTP beaconing behavior
-- MITRE ATT&CK mapping based on observed attacker techniques
-
-### Skills Demonstrated
-- Network traffic analysis (PCAP)
-- MITRE ATT&CK behavioral mapping
-- Incident analysis and reporting
+### MITRE ATT&CK Mapping
+Observed DNS and HTTP beaconing behaviors were mapped to MITRE ATT&CK techniques
+(T1071.004, T1071.001, T1046) using behavior-based analysis.
