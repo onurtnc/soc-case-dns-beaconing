@@ -1,0 +1,42 @@
+=== SIEM ALERT OUTPUT ===
+
+Alert Name: Suspicious DNS Beaconing Detected
+Severity: High
+Status: Open
+Timestamp: 2025-01-10 10:33:21 UTC
+
+Source Information:
+  Hostname: WIN-USER01
+  IP Address: 192.168.1.25
+  User: onur
+
+Detection Summary:
+  Log Source: DNS Logs
+  Detection Type: Threshold-based correlation
+  Suspicious Domain: random-domain123.com
+  Query Count: 21 queries
+  Time Window: 2 minutes
+  Query Pattern: Regular interval (automated)
+
+Correlation Evidence:
+  - Multiple repetitive DNS queries to the same external domain
+  - Short and consistent time intervals between queries
+  - Behavior inconsistent with normal user browsing activity
+
+MITRE ATT&CK Mapping:
+  Tactic: Command and Control
+  Technique: DNS (T1071.004)
+
+Risk Assessment:
+  This alert indicates a high likelihood of automated command-and-control
+  communication originating from the affected endpoint.
+
+Recommended Analyst Actions:
+  - Validate alert by reviewing DNS and network logs
+  - Check endpoint activity using EDR telemetry
+  - Isolate host if malicious activity is confirmed
+  - Block the domain at DNS or firewall level
+  - Initiate incident response procedures
+
+Current Analyst Decision:
+  Status set to: Under Investigation
