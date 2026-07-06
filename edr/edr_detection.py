@@ -1,4 +1,5 @@
 import json
+import os
 import re
 
 # Suspicious parent -> child process relationships (EDR logic)
@@ -79,7 +80,11 @@ def detect_edr_alerts(events):
     return alerts
 
 def main():
-    events = load_events("edr/sample_edr_events.jsonl")
+    # Resolve the sample file relative to this script's location so the
+    # script works regardless of the current working directory it's run from.
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sample_path = os.path.join(script_dir, "sample_edr_events.jsonl")
+    events = load_events(sample_path)
     alerts = detect_edr_alerts(events)
 
     print("=== EDR Detection Output ===\n")
