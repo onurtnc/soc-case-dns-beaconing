@@ -1,0 +1,4 @@
+# Only required to run the optional REST API (api/app.py).
+# The CLI scripts (automation/dns_beaconing_detector.py, edr/edr_detection.py)
+# use only the Python standard library and need no third-party packages.
+flask>=3.0,<4.0
